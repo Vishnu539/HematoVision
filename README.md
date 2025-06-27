@@ -62,7 +62,7 @@ HematoVision/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/HematoVision.git
+git clone https://github.com/Vishnu539/HematoVision.git
 cd HematoVision
 ```
 
