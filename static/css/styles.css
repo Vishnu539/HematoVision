@@ -1,0 +1,125 @@
+/* General Styling */
+body {
+  font-family: 'Satoshi', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h4 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.hero{
+  background-color: #EFF0F3;
+}
+
+#predict{
+  background-color: #EFF0F3;
+}
+
+/* Animated Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #e0f7fa, #f1f8e9, #e3f2fd, #fce4ec);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.animate-button {
+  transition: all 0.3s ease;
+}
+
+.btn{
+  background-color: #0068FF;
+}
+
+.btn:hover {
+  background-color: #000000 !important;
+  color: #fff;
+  border: none;
+}
+
+/* Upload Input */
+input[type="file"] {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f2f2f2;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #e6e6e6;
+}
+
+/* Info Cards */
+.info-card {
+  width: 300px;
+  min-height: 200px;
+  transition: transform 0.3s ease;
+  background: #0068FF;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cell-card {
+  background-color: #f9fafb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cell-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Section Styling */
+section {
+  padding: 60px 20px;
+}
+
+/* Carousel Button Position Fix */
+#card-carousel button {
+  z-index: 10;
+}
+
+/* Footer Links */
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #64b5f6;
+}

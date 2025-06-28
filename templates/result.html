@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction Result - HematoVision</title>
+  <link rel="icon" type="image/png" href="static\images\blood-cell.png">
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script> 
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/white-blood-cell.png') }}">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body class="animated-bg d-flex flex-column justify-content-center align-items-center min-vh-100 p-4">
+
+  <div class="text-center mb-4"  data-aos="slide-down">
+    <h2 class="fw-bold text-primary">🔍 Prediction Result</h2>
+    <p class="text-muted">Here’s the prediction and a brief about the identified blood cell type.</p>
+  </div>
+
+  <div class="glass-card p-5 result-display-card text-center"  data-aos="slide-up">
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}"
+         alt="Uploaded Image"
+         class="img-fluid rounded shadow mb-4"
+         style="max-height: 300px;">
+
+    <h4 class="fw-bold text-success mb-3">Predicted Cell Type: {{ prediction }}</h4>
+
+    {% if prediction == 'EOSINOPHIL' %}
+      <p class="text-muted">
+        Eosinophils are a type of white blood cell involved in combating parasites and triggering allergic responses. They contain granules that release enzymes to neutralize threats and are often elevated in asthma or autoimmune conditions.
+      </p>
+    {% elif prediction == 'LYMPHOCYTE' %}
+      <p class="text-muted">
+        Lymphocytes include T-cells and B-cells, critical in defending the body against infections and diseases. They are responsible for recognizing antigens, producing antibodies, and forming immune memory. Elevated counts may indicate viral infections or leukemia.
+      </p>
+    {% elif prediction == 'MONOCYTE' %}
+      <p class="text-muted">
+        Monocytes are immune cells that transform into macrophages and dendritic cells once they reach tissues. They play a key role in removing dead cells, fighting pathogens, and activating immune responses. High levels may point to chronic inflammation.
+      </p>
+    {% elif prediction == 'NEUTROPHIL' %}
+      <p class="text-muted">
+        Neutrophils are the body’s rapid responders to infections, especially bacterial. They engulf pathogens via phagocytosis and release enzymes to kill them. An increase often suggests infection, inflammation, or stress responses.
+      </p>
+    {% else %}
+      <p class="text-muted">No additional information available for the predicted cell type.</p>
+    {% endif %}
+
+    <a href="/" class="btn btn-primary mt-4 animate-button px-4 py-2 rounded-pill fw-medium">Back to Home</a>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500,  // animation duration
+        once: true       // whether animation should happen only once
+      });
+  </script>
+
+  <script>
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+    
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', (e) => {
+      console.log(e);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HematoVision - Detect Blood Cells</title>
+  <link rel="icon" type="image/png" href="static\images\blood-cell.png">
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script> 
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap" rel="stylesheet">
+
+  <script
+    src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+    type="module"
+  ></script>
+</head>
+
+<body class="animated-bg">
+
+  <!-- Hero Section -->
+  <section class="vh-100 d-flex align-items-center justify-content-center hero">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="col-md-6" data-aos="fade-right">
+        <h1 class="display-4 fw-bold text-primary mb-3">🔬 HematoVision</h1>
+        <h4 class="text-dark mb-4">Advanced Blood Cell Classification using Transfer Learning</h4>
+        <p class="text-muted">HematoVision is a machine learning-powered platform for fast and reliable classification of white blood cells including eosinophils, lymphocytes, monocytes, and neutrophils. It assists in diagnostics and enhances understanding of hematologic conditions.</p>
+        <a href="#predict" class="btn btn-primary btn-lg  mt-3 px-4 py-2 fw-medium rounded-pill">Get Started</a>
+      </div>
+      <div class="col-md-5 text-center align-items-center" data-aos="fade-left">
+            <dotlottie-player class="" src="https://lottie.host/28107da5-99d2-4d6c-a415-ed4281c960fc/CaIdnYGfGd.lottie" background="transparent" speed="1" style="width: 500px; height: 500px" loop autoplay></dotlottie-player>
+      </div>
+    </div>
+  </section>
+
+  <!-- Information Section -->
+<section id="info" class="py-5 bg-primary">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4 text-light fs-1" data-aos="zoom-in">Types of Blood Cells</h2>
+    <div class="row justify-content-center g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-5 one-card" data-aos="zoom-in">
+        <div class="cell-card p-4 rounded-4 shadow-sm h-100">
+          <img src="https://imagebank.hematology.org/getimagebyid/60933?size=3" class="img-fluid rounded mb-3" alt="Eosinophil" style="max-height: 180px; object-fit: cover;">
+          <h4 class="fw-bold text-primary mb-2">Eosinophil</h4>
+          <p class="text-muted mb-0">Eosinophils are white blood cells involved in allergic responses and defense against parasitic infections. 
+            They release enzymes that combat invaders and are often elevated in asthma, hay fever, and autoimmune conditions.
+            Their granules stain reddish-pink under the microscope, making them easily recognizable.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-5" data-aos="zoom-in">
+        <div class="cell-card p-4 rounded-4 shadow-sm h-100">
+          <img src="https://imagebank.hematology.org/getimagebyid/60511?size=3" class="img-fluid rounded mb-3" alt="Eosinophil" style="max-height: 180px; object-fit: cover;">
+          <h4 class="fw-bold text-primary mb-2">Lymphocyte</h4>
+          <p class="text-muted mb-0">Lymphocytes play a vital role in the immune response. They include B cells (produce antibodies), 
+            T cells (destroy infected cells), and natural killer cells. Elevated lymphocytes can indicate viral infections 
+            or immune system disorders. They have a round nucleus and sparse cytoplasm.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-5" data-aos="zoom-in">
+        <div class="cell-card p-4 rounded-4 shadow-sm h-100">
+          <img src="https://imagebank.hematology.org/getimagebyid/60935?size=3" class="img-fluid rounded mb-3" alt="Eosinophil" style="max-height: 180px; object-fit: cover;">
+          <h4 class="fw-bold text-primary mb-2">Monocyte</h4>
+          <p class="text-muted mb-0">Monocytes are the largest white blood cells and are essential for clearing dead cells and pathogens. 
+            They migrate into tissues and become macrophages or dendritic cells, helping in tissue repair and antigen presentation. 
+            Increased counts may signal chronic infections or inflammation.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-5" data-aos="zoom-in">
+        <div class="cell-card p-4 rounded-4 shadow-sm h-100">
+          <img src="https://imagebank.hematology.org/getimagebyid/60047?size=3" class="img-fluid rounded mb-3" alt="Eosinophil" style="max-height: 180px; object-fit: cover;">
+          <h4 class="fw-bold text-primary mb-2">Neutrophil</h4>
+          <p class="text-muted mb-0">Neutrophils are first responders to bacterial infections. They kill invaders by engulfing them (phagocytosis) 
+            and releasing enzymes. Their numbers rise during acute infections and inflammation. 
+            They have a multi-lobed nucleus and pale pink cytoplasm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Prediction Upload Section -->
+  <section class="vh-100 d-flex align-items-center justify-content-center" id="predict" data-aos="slide-up">
+    <div class="glass-card p-5 text-center">
+      <h2 class="fw-bold text-primary mb-3">Upload Blood Cell Image</h2>
+      <p class="text-muted mb-4">Upload a blood cell image and our model will predict the type instantly.</p>
+
+      <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="mb-3 ">
+          <input class="form-control form-control-lg px-3" type="file" name="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg w-100 animate-button fw-medium">🔍 Predict</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">Made with ❤️ by Visonary Hematons | 
+      <a href="https://github.com/Vishnu539/HematoVision" target="_blank" class="text-info">GitHub</a> | 
+    </p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500,  // animation duration
+        once: true       // whether animation should happen only once
+      });
+  </script>
+
+
+  <script>
+    // Card carousel scroll
+    function scrollCards(direction) {
+      const track = document.getElementById("card-track");
+      const cardWidth = track.querySelector(".info-card").offsetWidth + 16; // card + margin
+      track.scrollLeft += direction * cardWidth * 2;
+    }
+
+
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+
+    // Listen for the scroll event and log the event data
+    lenis.on('scroll', (e) => {
+      console.log(e);
+    });
+  </script>
+
+</body>
+</html>
