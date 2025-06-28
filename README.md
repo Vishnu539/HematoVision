@@ -42,8 +42,7 @@ HematoVision is a deep learning-based web application that classifies different 
 ```
 HematoVision/
 ├── app.py
-├── saved_model/
-│   └── blood_cell_improved.h5
+├── blood_cell_improved.h5
 ├── static/
 │   ├── css/
 │   │   └── styles.css
