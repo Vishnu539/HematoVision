@@ -78,11 +78,11 @@ python app.py
 ```
 
 4. Open browser and go to `http://127.0.0.1:5000/`
+   
+5. Or check out the model deployed in Hugging Face
+`https://huggingface.co/spaces/Vishnu539/hematovision`
 
 ---
-
-5. Or check out the model deployed in Hugging Face
-https://huggingface.co/spaces/Vishnu539/hematovision
 
 ## 📊 Sample Prediction Output
 
