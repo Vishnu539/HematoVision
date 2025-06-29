@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 # ✅ Load the improved trained model
-model = load_model('blood_cell_improved.h5')
+model = load_model('blood_cell_improved.keras')
 
 # Class labels
 class_labels = ['EOSINOPHIL', 'LYMPHOCYTE', 'MONOCYTE', 'NEUTROPHIL']
