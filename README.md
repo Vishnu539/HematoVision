@@ -41,17 +41,15 @@ HematoVision is a deep learning-based web application that classifies different 
 
 ```
 HematoVision/
-├── app.py
-├── blood_cell_improved.h5
-├── static/
-│   ├── css/
-│   │   └── styles.css
-│   └── uploads/
-├── templates/
-│   ├── home.html
-│   └── result.html
-├── requirements.txt
-└── README.md
+├── Documentation & Demo/         # Contains demo video and documentation files
+├── static/                       # Static files (CSS, JS, images)
+├── templates/                    # HTML templates for the web interface
+├── Dockerfile                    # Docker configuration for deployment
+├── README.md                     # Project description and usage instructions
+├── app.py                        # Main Flask application file
+├── blood_cell_improved.keras    # Trained deep learning model file
+├── requirements.txt             # Python dependencies
+
 ```
 
 ---
