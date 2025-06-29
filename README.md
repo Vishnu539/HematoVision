@@ -81,6 +81,9 @@ python app.py
 
 ---
 
+5. Or check out the model deployed in Hugging Face
+https://huggingface.co/spaces/Vishnu539/hematovision
+
 ## 📊 Sample Prediction Output
 
 * Prediction result page shows:
